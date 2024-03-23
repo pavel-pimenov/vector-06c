@@ -1,0 +1,78 @@
+	Title	EXT.ASM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	Header - файл содержит описание выходов на все 	;;
+;; внешние процедуры.					;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;///////////// KD.ASM - Драйвер клавиатуры //////////////
+
+	External BEEP	; Щелчек.
+	External IN_KEY	; взять код из буфера
+	External KEY_RESET; сброс клавиатуры
+	External KEY_DELAY; Ожидает нажатия.
+
+	External KEY_INT; указатель драйвер
+
+	External FLAGC	; флаг цветогенератора
+	External COLOR	; код цветовой палитры
+	External RUSLAT	; статус по алфавиту
+	External SMALL	; статус по регистру
+	External KEY_KOD; динамический код клавиш
+	External SEEK	; указатель заполнения
+	External KEY_NUM; апаратный номер клавиши
+
+;;//////// WD.ASM - Драйвер оконного интерфейса //////////
+
+;========= основная таблица переходов ==========
+	External GETC	;чтение символа -//-
+	External ACTIV	;открытие окна (DE),(HL),а-флаг
+	External DEACTI  ;закрытие окна
+	External BORT	;нарисовать рамку
+	External HOME	;отчистка окна
+	External SCROL1	;скроллинг окна вверх
+	External SCROL2	;--//-- вниз
+;	External SCROL3	;--//-- вправо (на 2 символа)
+;	External SCROL4	;--//-- влево --//--
+;;
+;========== дополнительная таблица переходов ==========
+;реализует теже функции но используют абсолютные координаты
+;;
+	External PUTCXY	
+	External GETCXY	
+	External RAMKA	;флаг передовать не нужно
+	External TEN	;
+	External CLS	
+	External SCRN	
+	External SCRV	
+;	External SCRP	
+;	External SCRL	
+	External ABS_DE
+	External LIIR
+	External LDIR
+	External HL_DE_WIND
+	External HL_SUB_DE
+	External ADDREM
+	External ADDRSC	
+
+;______________ рабочие ячейки ________________
+	External CURSOR
+	External WIND1
+	External WIND2
+	External NUM
+	External BUF_SEK
+	External FLAGW
+
+;___________ инсталяционные крнстанты __________
+
+	External BUF_ZISE  ; 2 байта показыв размер буфера.
+	External BUF_BEGIN ;2 байта указывающие на начало
+			   ; буфера окон.
+	External W_ZG	 ; 2 байта указыв начало знако ген.
+	External W_EMUL_TXT
+			 ; 2 байта указыв на область эмул-
+			 ; яции текстового экрана ( 1Кбайт)
+	External STACK_SEGMENT;
+			 ; указатель верхушки стека.
+	External BUF_DISK; указатель на буфер.
+
+
