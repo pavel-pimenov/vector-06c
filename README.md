@@ -6,4 +6,6 @@
 
 ![Дискеты](https://github.com/pavel-pimenov/vector-06c/blob/main/photo/vector-06c.png)
 
+У кого есть аналогичные ретро-диски и нет возможности прочитать - обращайтесь
+[agatcomp.su](http://agatcomp.su)http://agatcomp.su
 
